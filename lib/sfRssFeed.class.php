@@ -170,6 +170,8 @@ class sfRssFeed extends sfFeed
   {
     $this->initContext();
     $this->context->getResponse()->setContentType('application/rss+xml; charset='.$this->getEncoding());
+    // $this->context->getResponse()->setAccessControlAllowOrigin('Access-Control-Allow-Origin: *');
+    header("Access-Control-Allow-Origin: *");
 
     return $this->toXml();
   }
